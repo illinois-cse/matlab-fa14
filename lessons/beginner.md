@@ -17,23 +17,29 @@
 
 ![Matrix equation](https://raw.githubusercontent.com/uiuc-cse/matlab-fa14/gh-pages/lessons/img/truss-matrix.png)
 
+## Exercise
+
+[Exercises](https://raw.githubusercontent.com/uiuc-cse/matlab-fa14/gh-pages/lessons/exercises-beginner.pdf)
+
 ## Vectorization
 
 -   Write a script:
 
-    a=-9.8; %m/s^2
-    v=2520; %m/s
-    x0=0;
-    t=1;
-    y=a*t^2+v*t+x0;
+    `a=-9.8; %m/s^2`
+    
+    `v=2520; %m/s`
+    
+    `x0=0;`
+    
+    `t=1;`
+    
+    `y=a*t^2+v*t+x0;`
 
 ## Functions
 
 One equation for the volume rate of flow of water Q over the spillway of a dam is the formula
 
-    $$Q = C \sqrt{2g} B \left(H+\frac{v^2}{2g}\right)^{3/2}$$
-
-    Q = C √(2g) B (H + v^2/(2g))^1.5
+Q = C √(2g) B (H + v^2/(2g))^1.5
 
 where C is the discharge coefficient; B is the spillway width; and H is the depth of water passing over the spillway.
 
@@ -45,5 +51,5 @@ where C is the discharge coefficient; B is the spillway width; and H is the dept
 
 ## Scripts and file operations
 
-$$T_{F}\left(T_{C}\right) = T_{C} \frac{180}{100} + 32$$
+T_F(T_C) = T_C 180/100 + 32
 
