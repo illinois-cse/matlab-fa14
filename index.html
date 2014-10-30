@@ -56,7 +56,9 @@
 <li>Libraries and modules</li>
 <li>Loops, logic, and conditionals</li>
 <li>Input/output, files</li>
-</ul><p>(If you don't know what some of these mean, don't worry!  This is a gentle introduction.)</p>
+</ul>
+
+<p>(If you don't know what some of these mean, don't worry!  This is a gentle introduction.)</p>
 
 <h1>
 <a name="introduction-to-matlab" class="anchor" href="#introduction-to-matlab"><span class="octicon octicon-link"></span></a><a href="#intro">Introduction to MATLAB</a>
@@ -80,7 +82,9 @@
 <li>Loops, logic, and conditionals</li>
 <li>Input/output, files</li>
 <li>Basic numerical examples &amp; matrix solutions</li>
-</ul><h3>
+</ul>
+
+<h3>
 <a name="lesson-materials" class="anchor" href="#lesson-materials"><span class="octicon octicon-link"></span></a>Lesson Materials</h3>
 
 <p><img src="https://raw.githubusercontent.com/uiuc-cse/matlab-fa14/gh-pages/lessons/img/truss.png" alt="Truss image"></p>
@@ -111,26 +115,64 @@ F = m/1000 *g;                        % spring force (N)
 
 <p>This tutorial focuses on the solution of differential equations and similar systems with MATLAB.</p>
 
+<p><strong>Spring Interpolation Data</strong></p>
+
+<pre><code>m = [5 10 20 50 100];                   %mass data (g)
+d = [15.5 33.07 53.39 140.24 301.03];   %displacement data (mm) 
+g = 9.81;                               %g = 9.81
+F = m/1000 *g;                          %compute spring force (N)
+</code></pre>
+
+<p><strong>Heat Equation by Finite Difference Method</strong></p>
+
+<p>Finite-difference models are used throughout engineering to obtain numerical solutions to differential equations.  This particular system models the heat equation</p>
+
+<p>$$ \frac{1}{\alpha} \frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2}$$</p>
+
+<p>given an initial condition of $u(x,t=0) = \sin\left(\pi x/L\right)$ and boundary conditions of $u(x=0,t) = 0$ and $u(x=L,t) = 0$.</p>
+
+<p>To approximate a derivative, the most straightforward way is to take the formal definition</p>
+
+<p>$$f'(x) = \frac{f(x+h)-f(x)}{h}$$</p>
+
+<p>and use a small but nonzero step $h$ in your calculation.</p>
+
+<p>Application of this principle to the heat equation leads to a statement of the form</p>
+
+<p>$$ \frac{1}{\alpha} \frac{u^m_i - u^{m-1}<em>i}{\Delta t} = \frac{u^{m-1}</em>{i-1} - 2 u^{m-1}<em>{i} + u^{m-1}</em>{i+1}}{\Delta x^2} $$</p>
+
+<p>or $u^m_i = \frac{\alpha \Delta t}{\Delta x^2}u^{m-1}<em>{i-1} + \left[1 - 2\left(\frac{\alpha \Delta t}{\Delta x^2}\right)\right]u^{m-1}</em>{i} + \frac{\alpha \Delta t}{\Delta x^2}u^{m-1}_{i+1}$.</p>
+
+<p>This clearly yields a way to calculate subsequent time steps point-by-point from the previous time step's data.</p>
+
+<p><img src="https://raw.githubusercontent.com/uiuc-cse/matlab-fa14/gh-pages/lessons/img/fd-stencil.png" alt=""></p>
+
+<p><strong>Radioactive Decay System of Differential Equations</strong></p>
+
+<p><img src="https://raw.githubusercontent.com/uiuc-cse/matlab-fa14/gh-pages/lessons/img/rad-decay-chain.png" alt=""></p>
+
+<p><img src="https://raw.githubusercontent.com/uiuc-cse/matlab-fa14/gh-pages/lessons/img/rad-decay.png" alt=""></p>
+
 <h1>
 <a name="distributed--parallel-matlab" class="anchor" href="#distributed--parallel-matlab"><span class="octicon octicon-link"></span></a><a href="#parallel">Distributed &amp; Parallel MATLAB</a>
 </h1>
 
 <h3>
-<a name="oct-16-10noon--mel-1001" class="anchor" href="#oct-16-10noon--mel-1001"><span class="octicon octicon-link"></span></a>Oct. 16, 10–Noon • MEL 1001</h3>
+<a name="postponed--mel-1001" class="anchor" href="#postponed--mel-1001"><span class="octicon octicon-link"></span></a>Postponed • MEL 1001</h3>
 
 <h1>
 <a name="mathworks-site-visit--matlab-r2014b" class="anchor" href="#mathworks-site-visit--matlab-r2014b"><span class="octicon octicon-link"></span></a><a href="#mathworks">MathWorks site visit:  MATLAB R2014b</a>
 </h1>
 
 <h3>
-<a name="oct-30--location-tbd" class="anchor" href="#oct-30--location-tbd"><span class="octicon octicon-link"></span></a>Oct. 30 • Location TBD</h3>
+<a name="oct-28--dcl-2240" class="anchor" href="#oct-28--dcl-2240"><span class="octicon octicon-link"></span></a>Oct. 28 • DCL 2240</h3>
 
 <h1>
 <a name="image-processing-in-matlab" class="anchor" href="#image-processing-in-matlab"><span class="octicon octicon-link"></span></a><a href="#image">Image Processing in MATLAB</a>
 </h1>
 
 <h3>
-<a name="nov-20-10noon--mel-1001" class="anchor" href="#nov-20-10noon--mel-1001"><span class="octicon octicon-link"></span></a>Nov. 20, 10–Noon • MEL 1001</h3>
+<a name="oct-30-10noon--mel-1001" class="anchor" href="#oct-30-10noon--mel-1001"><span class="octicon octicon-link"></span></a>Oct. 30, 10–Noon • MEL 1001</h3>
 
 <h1>
 <a name="about-these-workshops" class="anchor" href="#about-these-workshops"><span class="octicon octicon-link"></span></a>About These Workshops</h1>
@@ -156,7 +198,7 @@ F = m/1000 *g;                        % spring force (N)
           </script>
           <script type="text/javascript">
             try {
-              var pageTracker = _gat._getTracker("UA-53962544-2");
+              var pageTracker = _gat._getTracker("m= [5 10 20 50 100];                    %mass data (g) d= [15.5 33.07 53.39 140.24 301.03];    %displacement data (mm)  g = 9.81;                               %g = 9.81 F = m/1000 *g;                          %compute spring force (N)");
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
